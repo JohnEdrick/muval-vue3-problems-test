@@ -1,2 +1,11 @@
-// replace below with a store. the below only exists to silence errors
-export const useCounterStore = () => ({ increment: null })
+import { defineStore } from 'pinia'
+export const useCounterStore = defineStore('counter', {
+  state: () => ({
+    count: 0,
+  }),
+  actions: {
+    increment() {
+      this.count++
+    },
+  },
+})
